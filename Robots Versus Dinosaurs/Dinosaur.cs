@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Robots_Versus_Dinosaurs
 {
@@ -26,35 +28,15 @@ namespace Robots_Versus_Dinosaurs
 
 
         //member methods (Can Do)
-
-        //public void Attack(Herd attacker, Fleet defender)
+        //public string GetDinosaur()
         //{
-        //    int injury = 
+            
         //}
 
-        public void Defend(Dinosaur type)
+        public void Attack(Robot robot)
         {
-
+            robot.health -= attackPower;
+            energy -= 10;
         }
-
-
-        public void Tire(Dinosaur type)
-        {
-
-        }
-
-        //public bool Alive()
-        //{
-        //    return (health > 0)
-        //}
-
-
-
-
-
-
-
-
     }
-
 }

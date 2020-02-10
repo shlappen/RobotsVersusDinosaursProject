@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Robots_Versus_Dinosaurs
 {
@@ -9,7 +11,6 @@ namespace Robots_Versus_Dinosaurs
         //member variables (Has A)
         public string type;
         public int attackPower;
-        
 
         //constructor (spawner)
         public Weapon(string type, int attackPower)
