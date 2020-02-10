@@ -7,12 +7,15 @@ namespace Robots_Versus_Dinosaurs
     class Weapon
     {
         //member variables (Has A)
-        public int attackPower;
         public string type;
+        public int attackPower;
+        
+
         //constructor (spawner)
-        public Weapon()
+        public Weapon(string type, int attackPower)
         {
-            
+            this.type = type;
+            this.attackPower = attackPower;
         }
         //member methods (Can Do)
     }

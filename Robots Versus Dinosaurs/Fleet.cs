@@ -6,15 +6,24 @@ namespace Robots_Versus_Dinosaurs
 {
     class Fleet
     {
-        public Robot megatron;
+        public Robot megazord;
         public Robot killswitchRobocalypse;
-        public Robot robert;
+        public Robot todd;
 
         public Fleet()
         {
-            List<Fleet> dinosaurs
+            megazord = new Robot("Megazord", "Sword");
+            killswitchRobocalypse = new Robot("Killswitch Robocalypse", "Laser");
+            todd = new Robot("Todd", "Asteroid");
+
 
         }
+
+        public void GetRobot()
+        {
+            
+        }
+
     }
 
 

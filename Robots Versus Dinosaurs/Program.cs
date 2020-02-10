@@ -6,7 +6,10 @@ namespace Robots_Versus_Dinosaurs
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Herd herd = new Herd();
+
+            Console.WriteLine(herd.dino1.type);
+            Console.ReadKey();
         }
     }
 }

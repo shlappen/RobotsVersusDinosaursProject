@@ -11,6 +11,7 @@ namespace Robots_Versus_Dinosaurs
         public int health;
         public int energy;
         public int attackPower;
+        public bool isDead;
 
         //constructor (spawner)
 
@@ -20,16 +21,40 @@ namespace Robots_Versus_Dinosaurs
             health = 100;
             energy = 100;
             this.attackPower = attackPower;
-
+            isDead = false;
         }
-        
+
+
         //member methods (Can Do)
 
-        public void Attack()
+        //public void Attack(Herd attacker, Fleet defender)
+        //{
+        //    int injury = 
+        //}
+
+        public void Defend(Dinosaur type)
         {
-            health -= 10;
+
         }
-        
+
+
+        public void Tire(Dinosaur type)
+        {
+
+        }
+
+        //public bool Alive()
+        //{
+        //    return (health > 0)
+        //}
+
+
+
+
+
+
+
+
     }
 
 }
