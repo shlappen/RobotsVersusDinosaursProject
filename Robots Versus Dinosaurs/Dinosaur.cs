@@ -26,17 +26,14 @@ namespace Robots_Versus_Dinosaurs
             isDead = false;
         }
 
-
-        //member methods (Can Do)
-        //public string GetDinosaur()
-        //{
-            
-        //}
-
         public void Attack(Robot robot)
         {
             robot.health -= attackPower;
             energy -= 10;
+            if (robot.health <= 0)
+            {
+                robot.isDead = true;
+            }
         }
     }
 }

@@ -13,6 +13,7 @@ namespace Robots_Versus_Dinosaurs
         public int health;
         public int powerLevel;
         public Weapon weapon;
+        public bool isDead;
 
         //constructor (spawner)
         public Robot(string name)
@@ -21,42 +22,58 @@ namespace Robots_Versus_Dinosaurs
             health = 100;
             powerLevel = 100;
             weapon = null;
+            isDead = false;
         }
         //member methods (Can Do)
 
 
         public void Attack(Dinosaur dinosaur)
         {
-
-            //Console.WriteLine(SelectWeapon());
             SelectWeapon();
             dinosaur.health -= weapon.attackPower;
-                //weapon.attackPower;
-            //powerLevel -= 10;
+            if (dinosaur.health <= 0)
+            {
+                dinosaur.isDead = true;
+            }
+                    
         }
+
 
         public void SelectWeapon()
         {
-            
-            Console.WriteLine("Please choose from Sword, Laser, or Asteroid");
-            string response = Console.ReadLine();
-            switch (response)
+            bool isValid = false;
+            do
             {
-                case "Sword":
-                    weapon = new Weapon("Sword", 10);
-                    break;
-                case "Laser":
-                    weapon = new Weapon("Laser", 25);
-                    break;
-                case "Asteroid":
-                    weapon = new Weapon("Asteroid", 50);
-                    
-                    break;
-                default: Console.WriteLine("Please choose from Sword, Laser, or Asteroid");
-                    
-                    break;
-                    
-            }
+                Console.WriteLine("Robots, choose your weapon: Sword, Laser, or Asteroid");
+                string response = Console.ReadLine();
+                switch (response)
+                {
+                    case "Sword":
+                        weapon = new Weapon("Sword", 10);
+                        powerLevel -= 5;
+                        Console.WriteLine("How Medieval");
+                        isValid = true;
+                        break;
+                    case "Laser":
+                        weapon = new Weapon("Laser", 25);
+                        powerLevel -= 15;
+                        Console.WriteLine("You borrowed a laser from a shark!");
+                        isValid = true;
+                        break;
+                    case "Asteroid":
+
+                        weapon = new Weapon("Asteroid", 50);
+                        powerLevel -= 20;
+                        Console.WriteLine("...");
+                        isValid = true;
+                        break;
+                    default:
+                        Console.WriteLine("Please choose from Sword, Laser, or Asteroid");
+                        break;
+
+                }
+
+            } while (isValid == false);
         }
     }
 }
