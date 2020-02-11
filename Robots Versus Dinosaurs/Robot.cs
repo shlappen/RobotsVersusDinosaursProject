@@ -20,19 +20,24 @@ namespace Robots_Versus_Dinosaurs
             this.name = name;
             health = 100;
             powerLevel = 100;
-
+            weapon = null;
         }
         //member methods (Can Do)
 
+
         public void Attack(Dinosaur dinosaur)
         {
+
+            //Console.WriteLine(SelectWeapon());
             SelectWeapon();
             dinosaur.health -= weapon.attackPower;
-            powerLevel -= 10;
+                //weapon.attackPower;
+            //powerLevel -= 10;
         }
 
         public void SelectWeapon()
         {
+            
             Console.WriteLine("Please choose from Sword, Laser, or Asteroid");
             string response = Console.ReadLine();
             switch (response)
@@ -45,10 +50,12 @@ namespace Robots_Versus_Dinosaurs
                     break;
                 case "Asteroid":
                     weapon = new Weapon("Asteroid", 50);
+                    
                     break;
                 default: Console.WriteLine("Please choose from Sword, Laser, or Asteroid");
+                    
                     break;
-
+                    
             }
         }
     }

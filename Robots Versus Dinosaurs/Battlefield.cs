@@ -27,11 +27,29 @@ namespace Robots_Versus_Dinosaurs
             herd1.dinosaurs[0].Attack(fleet.robots[0]);
         }
 
+        public int Rolldice()
+        {
+            Random random = new Random();
+            int result = random.Next(0, 2);
+            return result;
+        }
         public void RobotsTurnToAttack()
         {
-            fleet.SelectRobot();
+            //fleet.SelectRobot();
             //int i = fleet.SelectRobot();
-            //Robot.Attack(herd1.dinosaurs[i].SelectDinosaur());
+            
+            int randomRobot1 = Rolldice();
+            int randomRobot2 = Rolldice();
+            
+            fleet.robots[randomRobot1].Attack(herd1.dinosaurs[randomRobot2]);
+            foreach (Dinosaur dinosaur in herd1.dinosaurs)
+            { Console.WriteLine($"Type {dinosaur.type}, Health: {dinosaur.health}");
+            }
+
+            //fleet.robots.
+                //Attack(herd1.dinosaurs[0]);
+            //Robot.Attack(herd1.dinosaurs[1]);
+            //Robot.Attack(herd1.dinosaurs[2]);
         }
 
         public void RunGame()
@@ -41,7 +59,7 @@ namespace Robots_Versus_Dinosaurs
             RobotsTurnToAttack();
             //Console.WriteLine(fleet.SelectRobot());
             //}while 
-
+            //Robot.Attack(herd1.dinosaurs[0].type, );
         }
         
     }
